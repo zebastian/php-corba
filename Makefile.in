@@ -1,0 +1,41 @@
+## $Id: Makefile.in,v 1.15 2002/05/27 17:30:16 david Exp $
+
+LTLIBRARY_NAME        = libuniverse.la
+LTLIBRARY_SOURCES     = php_universe.c php_universe.h
+LTLIBRARY_SOURCES_CPP  = \
+	fromcorba.cpp fromcorba.h \
+	implementation.cpp implementation.h \
+	object.cpp object.h \
+	php_universe.h \
+  struct.cpp struct.h \
+	tocorba.cpp tocorba.h \
+	universe.cpp universe.h \
+	zpp.cpp zpp.h \
+	zppclass.cpp zppclass.h \
+	zppclassentry.cpp zppclassentry.h \
+	zppclassentryregistry.cpp zppclassentryregistry.h \
+	zppclassstatic.h \
+	zppexception.cpp zppexception.h \
+	zpphashtable.h \
+	zppinstanceregistry.cpp zppinstanceregistry.h \
+  zppmodule.cpp zppmodule.h \
+	zppproxy.cpp zppproxy.h \
+	zppresource.h \
+	zppstream.h \
+	zppvalue.cpp zppvalue.h \
+	zval_array.cpp zval_array.h \
+	zval_var.cpp zval_var.h
+
+LTLIBRARY_SHARED_NAME = universe.la
+LTLIBRARY_SHARED_LIBADD  = $(UNIVERSE_SHARED_LIBADD)
+LTLIBRARY_OBJECTS_X   = $(LTLIBRARY_SOURCES_CPP:.cpp=.lo)
+
+LTLIBRARY_LDFLAGS = -lstdc++
+EXTRA_CXXFLAGS = -g -Wall -pedantic -Wno-long-long -ansi $(UNIVERSE_OS_DEFINES)
+
+include $(top_srcdir)/build/dynlib.mk
+
+docs: Doxyfile
+	-rm -rf html
+	doxygen
+

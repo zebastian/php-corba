@@ -1,0 +1,9 @@
+interface ParentInterface
+{
+	void print_long(in long value); 
+};
+
+interface ChildInterface : ParentInterface
+{
+	void print_string(in string value); 
+};

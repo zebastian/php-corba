@@ -1,0 +1,9 @@
+
+typedef fixed<10,3> LargeValue;
+
+
+interface TestFixed
+{
+	LargeValue multiply(in LargeValue x, in LargeValue y);
+};
+

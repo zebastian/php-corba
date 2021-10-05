@@ -1,0 +1,20 @@
+$Id: README.ird,v 1.3 2002/07/16 21:05:35 david Exp $
+
+Interface Repository
+--------------------
+
+Universe requires a running Interface Repository Daemon which is case 
+insensitive.
+
+The socket address for ird should be configured in php.ini. The default 
+address is port 2222 on localhost.
+
+To use interfaces located in /var/idl/interfaces.idl, start ird like this:
+
+$ ird -ORBIIOPAddr inet:localhost:2222 --db /var/idl/interfaces
+
+You may add interfaces to the interface repository at run-time like this:
+
+$ idl -ORBIfaceRepoAddr inet:localhost:2222 --feed-ir more.idl
+
+

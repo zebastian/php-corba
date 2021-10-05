@@ -1,0 +1,41 @@
+interface object_data_type
+{
+	void print_long(in long value);
+};
+
+struct struct_data_type
+{
+	long member;
+};
+
+exception exception_data_type
+{
+	long member;
+};
+
+typedef sequence<long> long_seq;
+
+enum enum_data_type
+{
+	zero, one, two, three, four, five, six, seven
+};
+
+interface DataTypes
+{
+	short loop_short(in short value);
+	long loop_long(in long value);
+	unsigned short loop_ushort(in unsigned short value);
+	unsigned long loop_ulong(in unsigned long value);
+	float loop_float(in float value);
+	double loop_double(in double value);
+	boolean loop_boolean(in boolean value);
+	char loop_char(in char value);
+	octet loop_octet(in octet value);
+	object_data_type loop_object(in object_data_type value);
+	struct_data_type loop_struct(in struct_data_type value);
+//	exception_data_type loop_exception(in exception_data_type value);
+	string loop_string(in string value);
+	long_seq loop_long_seq(in long_seq value);
+	enum_data_type loop_enum(in enum_data_type value);
+};
+

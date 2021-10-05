@@ -1,0 +1,70 @@
+$Id: README.usage,v 1.1 2001/08/05 15:27:01 david Exp $
+
+Usage
+-----
+
+Example usage may be found in the tests and demo directories.
+
+Note: For convenience you may use the same class names for struct and object 
+as Satellite uses, to simplify a migration to Universe.
+
+A very simple example follows here:
+
+<?php
+$ior = "IOR:000000000000000f49444c3a52616e646f6d3a312e3000000000000100000000000000500001000000000016706c616e7874792e6473672e63732e7463642e69650006220000002c3a5c706c616e7874792e6473672e63732e7463642e69653a52616e646f6d3a303a3a49523a52616e646f6d00";
+$obj = new UniverseObject($ior);
+$value = $obj->lrand48();
+echo "Random value retrieved: $value\n";
+?>
+
+
+Using enumerations
+------------------
+
+Universe does not handle enum:s like Satellite.
+
+The class for enum:s is removed and replaced with the possibility to use
+strings as enum values, for example:
+
+// IDL
+
+enum enum_data_type
+{
+	zero, one, two, three, four, five, six, seven
+};
+
+interface DataTypes
+{
+	enum_data_type loop_enum(in enum_data_type value);
+};
+
+// PHP
+
+<?php 
+
+class DataTypes 
+{
+	function loop_enum($value) { return $value; }
+}
+
+$object = new UniverseObject(new DataTypes(), "IDL:DataTypes:1.0");
+
+echo $object->loop_enum(1)."\n";
+echo $object->loop_enum(two)."\n";
+echo $object->loop_enum("three")."\n";
+
+?>
+
+// Output
+
+one
+two
+three
+
+
+Creating CORBA objects in PHP
+-----------------------------
+
+See server.php and client.php in the demo directory.
+
+

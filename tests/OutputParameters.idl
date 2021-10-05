@@ -1,0 +1,6 @@
+interface OutputParameters
+{
+	void get_long(out long value); 
+	void get_string(out string value); 
+};
+

@@ -1,0 +1,13 @@
+interface Attributes
+{
+	attribute short short_value;
+	attribute long long_value;
+	attribute unsigned short ushort_value;
+	attribute unsigned long ulong_value;
+	attribute float float_value;
+	attribute double double_value;
+	attribute boolean boolean_value;
+	attribute char char_value;
+	attribute octet octet_value;
+};
+

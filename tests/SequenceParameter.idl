@@ -1,0 +1,7 @@
+interface SequenceParameter
+{
+	typedef sequence<long> LongSeq;
+
+	void set_values(in LongSeq values);
+	LongSeq get_values();
+};

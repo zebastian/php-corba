@@ -1,0 +1,7 @@
+interface OctetSequenceTest
+{
+	typedef sequence<octet> OctetSequence;
+
+	void set_values(in OctetSequence values);
+	OctetSequence get_values();
+};

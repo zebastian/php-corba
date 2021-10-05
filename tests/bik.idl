@@ -1,0 +1,25 @@
+#pragma prefix "nederland.net"
+
+module BIK {
+    typedef string<6>       BikID;
+    typedef string<40>      BikNaam;
+    typedef string<196>     BikOmschrijving;
+
+
+ struct Categorie {
+        BikID               id;
+        BikNaam             naam;
+        BikOmschrijving     omschrijving;
+        BikID               referentie;
+    };
+
+    typedef sequence<Categorie>     CategorieSeq;
+
+
+    interface bikboek {
+        CategorieSeq getRootCategorieen();
+        CategorieSeq getSubCategorieen(in BikID parent);
+        Categorie getCategorie(in BikID categorie);
+    };
+};
+

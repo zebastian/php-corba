@@ -1,0 +1,79 @@
+$Id: README.Zpp,v 1.1 2001/08/05 15:27:01 david Exp $
+
+The Zpp Framework
+-----------------
+
+Zpp is a C++ framework for PHP extensions, written by David Eriksson 
+<eriksson@php.net>.
+
+It has been developed to be used with the Universe PHP extension.
+
+Zpp is indended to simplify the creation of an object-oriented PHP extension.
+
+The Zpp framework is subject to version 2.02 of the PHP license that is 
+bundled with this package in the file LICENSE, and is available at through 
+the world-wide-web at http://www.php.net/license/2_02.txt.
+
+For a demonstration of Zpp, and information about how you can support the 
+development of Zpp, please visit the the Universe site:
+
+  http://universe.2good.nu/
+
+
+
+Classes in the framework
+------------------------
+
+o ZppClass - Parent class for a PHP class written in C++
+o ZppClassEntry - Wrapper for a zend_class_entry structure
+o ZppClassEntryRegistry - Keeps track of class types
+o ZppContext - Parent class for thread-specific data
+o ZppException - Parent class for Zpp exceptions
+o ZppInstanceRegistry - Keeps track of class instances
+o ZppModule - Parent class for truly global data
+o ZppProxy - Handles incoming calls from Zend
+o ZppValue - Wrapper for a zval pointer
+
+
+Template classes in the framework
+---------------------------------
+
+o ZppClassStatic - Static helper functions for ZppClass subclasses
+o ZppHashTable - Type-safe wrapper for a HashTable pointer
+o ZppResource - Type-safe Zend resources
+
+
+Source code documentation
+-------------------------
+
+Doyxgen has been used for source code documentation. Generate documentation
+with the following command in the ext/universe directory:
+
+  make docs
+
+This, of course, requires doxygen to be installed. The documentation will be 
+stored in a subdirectory called "html".
+
+
+Usage
+-----
+
+See the Universe PHP extension for example usage of Zpp.
+
+
+Future of Zpp
+-------------
+
+o Find and get rid of any memory leaks
+o Make it run on Windows
+o Verify thread-safety
+o Separate from Universe
+
+
+Known issues
+------------
+
+o You may not inherit from PHP classes created with Zpp (aggregate them if 
+  needed).
+o gcc compiles C++ code really slow :-(
+

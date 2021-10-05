@@ -1,0 +1,6 @@
+interface InputParameters
+{
+	void print_long(in long value); 
+	void print_string(in string value); 
+};
+

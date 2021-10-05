@@ -1,0 +1,18 @@
+// Trying to reproduce error reported by Omar Kilani <ok@mailcall.com.au>
+
+module mmod {
+
+	struct ExampleStruct {
+			 short smember;
+			 long lmember;
+			 char cmember;
+			 char camember[11];
+	};
+
+	interface ExampleInterface {
+		short ReturnTheNumberFive();
+		short ExampleMethod(in short key, inout ExampleStruct e_struct);
+	};
+	
+};
+

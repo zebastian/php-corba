@@ -1,0 +1,5 @@
+interface ObjectParameter
+{
+	void set_object(in Object objref);
+	Object get_object();
+};

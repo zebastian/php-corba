@@ -1,0 +1,15 @@
+  module dactylis2
+  {
+      typedef sequence<octet> OctetSeq;
+
+      exception CertNotFound
+			{
+				string message;
+			};
+
+      interface CertificateStore
+      {
+        OctetSeq getEncCert(in string userId)
+          raises (CertNotFound);
+      };
+  };
